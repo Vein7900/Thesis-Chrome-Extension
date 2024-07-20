@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "URL Interceptor",
+  "version": "1.0",
+  "description": "Intercept URLs and prompt user to continue or cancel.",
+  "permissions": [
+    "tabs",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
